@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Pagina 2</title>
+    <style>
+        body {
+            background-color: rgb(110, 194, 159)
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="titulo" 
+    onmouseover="ponerTituloRojo()"
+    onmouseout="ponerTituloNegro()">
+    Bienvenidos a JavaScript TOTAL
+    </h1>
+    <h2>El primer paso es el más grande</h2>
+    <p>Esta página es muy sencilla</p>
+    <p>(pero tiene un screto >>> Presiona F12)</p>
+</body>
+<script>
+    function ponerTituloRojo() {
+        document.getElementById("titulo").style = "color: red"
+    }
+
+    function ponerTituloNegro() {
+        document.getElementById("titulo").style = "color: black"
+    }
+</script>
+
+</html>

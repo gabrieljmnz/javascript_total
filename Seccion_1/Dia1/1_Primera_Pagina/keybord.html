@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <script>
+        function mostrarMensaje() {
+            alert('Hizo clic, se ejecuta mostrarMensaje!')
+        }
+    </script>
+    <section>
+        <label>Evento onkeypress</label>
+        <input type="text" onkeypress="mostrarMensaje()" />
+        <p> Este atributo responde al evento keypress.
+            Este evento se desencadena cuando se activa el elemento y se pulsa una tecla. </p>
+        <br />
+        <hr>
+        <label>Evento onkeydown</label>
+        <input type="text" onkeydown="mostrarMensaje()" />
+        <p> Este atributo responde al evento keydown.
+            Este evento se desencadena cuando se activa el elemento y se pulsa una tecla. </p>
+        <br />
+        <hr>
+        <label>Evento onkeyup</label>
+        <input type="text" onkeyup="mostrarMensaje()" />
+        <p> Este atributo responde al evento onkeyup.
+            Este evento se desencadena cuando se activa el elemento y se libera una tecla.  </p>
+        <br />
+        <hr>
+
+    </section>
+</body>
