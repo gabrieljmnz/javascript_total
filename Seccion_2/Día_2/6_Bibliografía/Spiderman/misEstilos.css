@@ -1,0 +1,21 @@
+body{
+    background-color: rgb(108, 175, 197);
+}
+
+h2,h3{
+    background-color: rgb(22, 99, 187);
+}
+
+h1{
+    background-color: rgb(139, 41, 36);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p{
+    color:rgb(15, 11, 106);
+}
+
+.respNegrita {
+    color: rgb(116, 5, 5);
+    font-weight: bold;
+}

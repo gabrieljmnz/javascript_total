@@ -2,11 +2,11 @@
 
 ## Curso de HTML, CSS y Javascript
 
-# Nombre del estudiante
-        Angel Gabrie Vargas Jimenez
+# Nombre del estudiante:
+        Angel Gabriel Vargas Jimenez
 
-# Secciòn 10-2
+# Sección 10-2:
 
-## Descripciòn del repositorio
+## Descripción del repositorio:
 
-Estes es mi primer curso de programaciòn web
+Este es mi primer curso de programación web
