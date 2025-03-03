@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lycanroc</title>
+    <style>
+        audio::-webkit-media-controls-panel {
+            background-color: rgb(58, 151, 194);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="Audios/745.png" width="20%" alt="Lycanroc" align="left" hspace="50">
+    <br>
+    <br>
+    <br>
+    <audio controls id="pokemon">
+        <source src="Audios/cries_pokemon_latest_745.ogg" type="audio/mpeg">
+    </audio>
+    <br>
+    <br>
+    <button onclick="mostrarAudio()">Audio</button>
+
+    <script>
+        let AudioPokemon
+        = document.getElementById("pokemon")
+        function mostrarAudio() {
+            AudioPokemon.play()
+        }
+    </script>
+</body>
+
+</html>
