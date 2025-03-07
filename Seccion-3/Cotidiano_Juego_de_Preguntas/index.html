@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cuestionario</title>
+    <link rel="stylesheet" href="misEstilos.css">
+</head>
+
+<body onload="comenzarReloj()">
+    <audio id="audioGameover">
+        <source src="Audios/gameover.mp3" type="audio/mpeg">
+        Sonido no habilitado
+    </audio>
+    <h1>Cuestionario: Responde lo más rápido que puedas</h1>
+    <h2 id="textoCuentaR">30</h2>
+    <br>
+    <p>¿Cuál es la capital de Australia?</p>
+    <input type="text" id="australiaresp">
+    <br>
+    <p>¿Quién escribió la obra "Don Quijote de la Mancha"?</p>
+    <input type="text" id="donquijoteresp">
+    <br>
+    <p>¿En qué año se llevó a cabo el primer vuelo de los hermanos Wright?</p>
+    <input type="text" id="wrightresp">
+    <br>
+    <p>¿Cuál es el río más largo del mundo?</p>
+    <input type="text" id="rioresp">
+    <br>
+    <p>¿Qué famoso científico desarrolló la teoría de la relatividad?</p>
+    <input type="text" id="teoriaresp">
+    <br><br>
+    <button onclick="terminar()">Terminé!</button>
+    <br><br>
+    <button onclick="volverIntentar()">Volver a intentar</button>
+    <script>
+        // Botón de Terminé!
+        function terminar() {
+            let resp1 = document.getElementById("australiaresp")
+            let resp2 = document.getElementById("donquijoteresp")
+            let resp3 = document.getElementById("wrightresp")
+            let resp4 = document.getElementById("rioresp")
+            let resp5 = document.getElementById("teoriaresp")
+            alert("Ganaste, tus respuestas son: " + resp1.value + " " + resp2.value + " " + resp3.value + " " + resp4.value + " " + resp5.value)
+        }
+        // Botón de Volver a intentar
+        function volverIntentar() {
+            location.reload();
+        }
+
+        // Temporizador
+        let elementoTextoCuentaR =
+            document.getElementById("textoCuentaR");
+        let elementoSonidoGameover=
+            document.getElementById("audioGameover");
+
+    </script>
+</body>
+
+</html>
