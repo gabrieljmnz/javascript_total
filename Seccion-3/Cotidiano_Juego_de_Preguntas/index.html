@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="misEstilos.css">
 </head>
 
-<body onload="comenzarReloj()">
+<body onload="comenzarTiempo()">
     <audio id="audioGameover">
         <source src="Audios/gameover.mp3" type="audio/mpeg">
         Sonido no habilitado
     </audio>
     <h1>Cuestionario: Responde lo más rápido que puedas</h1>
-    <h2 id="textoCuentaR">30</h2>
+    <h2 id="contador">00:30</h2>
     <br>
     <p>¿Cuál es la capital de Australia?</p>
     <input type="text" id="australiaresp">
@@ -35,12 +35,17 @@
     <script>
         // Botón de Terminé!
         function terminar() {
+            clearInterval(intervalo);
             let resp1 = document.getElementById("australiaresp")
             let resp2 = document.getElementById("donquijoteresp")
             let resp3 = document.getElementById("wrightresp")
             let resp4 = document.getElementById("rioresp")
             let resp5 = document.getElementById("teoriaresp")
-            alert("Ganaste, tus respuestas son: " + resp1.value + " " + resp2.value + " " + resp3.value + " " + resp4.value + " " + resp5.value)
+            let fechaActual = new Date();
+            
+            alert("Ganaste, tus respuestas son: " + resp1.value + " " + resp2.value + " " + resp3.value + " " + resp4.value + " " + resp5.value
+                + " Fecha: " + fechaActual.toLocaleDateString('es-ES')
+            )
         }
         // Botón de Volver a intentar
         function volverIntentar() {
@@ -48,11 +53,21 @@
         }
 
         // Temporizador
-        let elementoTextoCuentaR =
-            document.getElementById("textoCuentaR");
-        let elementoSonidoGameover=
+        let elementoSonidoGameover =
             document.getElementById("audioGameover");
-
+        let elementoContador = document.getElementById("contador")
+        let tiempo = 30;
+        let intervalo;
+        function comenzarTiempo() {
+            intervalo = setInterval(function () {
+                tiempo--;
+                let minutos = Math.floor(tiempo / 60).toString().padStart(2, "0");
+                let segundos = (tiempo % 60).toString().padStart(2, "0");
+                elementoContador.textContent = minutos + ":" + segundos;
+ 
+                tiempo <= 0 && (clearInterval(intervalo), elementoSonidoGameover.play(), alert("¡Perdiste!"));
+            }, 1000);
+        }
     </script>
 </body>
 
