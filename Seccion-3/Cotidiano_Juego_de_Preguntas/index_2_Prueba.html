@@ -42,41 +42,31 @@
             let resp4 = document.getElementById("rioresp")
             let resp5 = document.getElementById("teoriaresp")
             let fechaActual = new Date();
-
+            
             alert("Ganaste, tus respuestas son: " + resp1.value + " " + resp2.value + " " + resp3.value + " " + resp4.value + " " + resp5.value
                 + " Fecha: " + fechaActual.toLocaleDateString('es-ES')
             )
         }
-
         // Botón de Volver a intentar
         function volverIntentar() {
             location.reload();
         }
 
         // Temporizador
+        let elementoSonidoGameover =
+            document.getElementById("audioGameover");
+        let elementoContador = document.getElementById("contador")
         let tiempo = 30;
         let intervalo;
-        let elementoSonidoGameover = document.getElementById("audioGameover");
-        let elementoContador = document.getElementById("contador")
-
         function comenzarTiempo() {
-            tiempo = 30;
-            elementoContador.textContent = tiempo;
-            clearInterval(intervalo);
-            intervalo = setInterval(() => {
-                if (tiempo > 0) {
-                    tiempo--;
-                    elementoContador.textContent = tiempo;
-                } else {
-                    tiempoCumplido();
-                    clearInterval(intervalo);
-                }
+            intervalo = setInterval(function () {
+                tiempo--;
+                let minutos = Math.floor(tiempo / 60).toString().padStart(2, "0");
+                let segundos = (tiempo % 60).toString().padStart(2, "0");
+                elementoContador.textContent = minutos + ":" + segundos;
+ 
+                tiempo <= 0 && (clearInterval(intervalo), elementoSonidoGameover.play(), alert("¡Perdiste!"));
             }, 1000);
-        }
-
-        function tiempoCumplido() {
-            elementoSonidoGameover.play();
-            alert("Perdiste!!")
         }
     </script>
 </body>
