@@ -4,27 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suma de Números</title>
+    <title>Document</title>
 </head>
 
 <body>
-    <p>Primer Número:</p>
-    <input type="number" id="primerNumero" placeholder="Ingresa un número">
-    <p>Segundo Número:</p>
-    <input type="number" id="segundoNumero" placeholder="Ingresa otro número">
+    <p>Primer Numero</p>
+    <input type="number" id="primerNumero">
+    <p>Segundo Numero</p>
+    <input type="number" id="segundoNumero">
     <button onclick="mostrarResultados()">Calcular</button>
     <h2 id="textoResultado"></h2>
 
     <script>
         function sumar(numero1, numero2) {
-            return parseInt(numero1) + parseInt(numero2);
+            resultado = parseInt(numero1) + parseInt(numero2);
+            return resultado;
         }
 
         function mostrarResultados() {
-            let elementoNumero1 = document.getElementById("primerNumero").value;
-            let elementoNumero2 = document.getElementById("segundoNumero").value;
-            let resultado = sumar(elementoNumero1, elementoNumero2);
-            document.getElementById("textoResultado").textContent = "El resultado es: " + resultado;
+            let elementoNumero1 = document.getElementById("primerNumero");
+            let elementoNumero2 = document.getElementById("segundoNumero");
+            let elementoTexto = document.getElementById("textoResultado");
+            let elementoSuma = sumar(elementoNumero1.value, elementoNumero2.value);
+
+            elementoTexto.textContent = elementoSuma;
         }
     </script>
 </body>
