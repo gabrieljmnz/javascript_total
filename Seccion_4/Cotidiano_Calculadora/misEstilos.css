@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(133, 210, 212);
+}
+
+h1 {
+    background-color: rgb(84, 171, 174);
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 9px;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(84, 171, 174);
+    display: inline;
+    margin-left: 132px;
+}
+
+.arriba{
+    color: rgb(7, 45, 46);
+    background-color: rgb(84, 171, 174);
+    width: 83px;
+    height: 40px;
+}
+
+.medio{
+    color: rgb(7, 45, 46);
+    background-color: rgb(84, 171, 174);
+    width: 170px;
+    height: 40px;
+}
+
+.abajo{
+    color: rgb(7, 45, 46);
+    background-color: rgb(84, 171, 174);
+    width: 112px;
+    height: 40px;
+}
+
+.resultadoStyle {
+    margin-left: 83px;
+}
+
