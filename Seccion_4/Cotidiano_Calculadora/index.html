@@ -1,25 +1,82 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Calculadora</title>
-        <link rel="stylesheet" href="misEstilos.css">
-        <script src="misScripts.js"></script>
-    </head>
 
-    <body>
-        <h1>Calculadora de Angel</h1>
-        <br><br>
-        <input type="number" id="dato1"> <input type="number" id="dato2">
-        <br><br>
-        <button class="arriba" onclick="suma()">+</button>  <button class="arriba" onclick="resta()">-</button> <button class="arriba" onclick="multiplicacion()">x</button> <button class="arriba" onclick="division()">/</button>
-        <br>
-        <button class="medio" onclick="raiz()">raíz</button> <button class="medio" onclick="potencia()">potencia</button>
-        <br>
-        <button class="medio" onclick="absoluto()">absoluto</button> <button class="medio" onclick="random()">random</button>
-        <br><br>
-        <p>Resultado</p>
-        <br><br>
-        <input class="resultadoStyle" type="number" id="resultado">
-        <br><br>
-        <button class="abajo" onclick="round()">round</button> <button class="abajo" onclick="floor()">floor</button> <button class="abajo" onclick="ceil()">ceil</button>
+<head>
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="misEstilos.css">
+</head>
+
+<body>
+    <h1>Calculadora de Angel</h1>
+    <br><br>
+    <input class="inputs" type="number" id="dato1"> <input class="inputs" type="number" id="dato2">
+    <br><br>
+    <button class="arriba" onclick="sumar()">+</button> <button class="arriba" onclick="restar()">-</button> <button
+        class="arriba" onclick="multiplicacion()">x</button> <button class="arriba" onclick="division()">/</button>
+    <br>
+    <button class="medio" onclick="raiz()">raíz</button> <button class="medio" onclick="potencia()">potencia</button>
+    <br>
+    <button class="medio" onclick="absoluto()">absoluto</button> <button class="medio"
+        onclick="random()">random</button>
+    <br><br>
+    <p class="textodeResp">Resultado:</p>
+    <br><br>
+    <h2 id="resultado">Resultado de la operación</h2>
+    <br><br>
+    <button class="abajo" onclick="round()">round</button> <button class="abajo" onclick="floor()">floor</button>
+    <button class="abajo" onclick="ceil()">ceil</button>
+    <br><br>
+    <p class="aviso">Si la operación solo utiliza un dato, introduce el dato en la primer casilla.</p>
+
+    <script>
+        let numero1 = document.getElementById("dato1");
+        let numero2 = document.getElementById("dato2");
+        let textoResultado = document.getElementById("resultado");
+        function sumar() {
+            let resultado = parseInt(numero1.value) + parseInt(numero2.value);
+            textoResultado.textContent = resultado;
+        }
+        function restar() {
+            let resultado = parseInt(numero1.value) - parseInt(numero2.value);
+            textoResultado.textContent = resultado;
+        }
+        function multiplicacion() {
+            let resultado = parseInt(numero1.value) * parseInt(numero2.value);
+            textoResultado.textContent = resultado;
+        }
+        function division() {
+            let resultado = parseInt(numero1.value) / parseInt(numero2.value);
+            textoResultado.textContent = resultado;
+        }
+        function raiz() {
+            let resultado = Math.sqrt(numero1.value);
+            textoResultado.textContent = resultado;
+        }
+        function potencia() {
+            let resultado =  Math.pow(numero1.value, numero2.value);
+            textoResultado.textContent = resultado;
+        }
+        function absoluto() {
+            let resultado = Math.abs(numero1.value);
+            textoResultado.textContent = resultado;
+        }
+        function random() {
+            let resultado = Math.floor(Math.random() * 100) + 1;
+            textoResultado.textContent = resultado;
+        }
+        function round() {
+            let resultadoRedondeado = Math.round(parseFloat(textoResultado.textContent));
+            textoResultado.textContent = resultadoRedondeado;
+        }
+        function floor() {
+            let resultadoRedondeadoAbajo = Math.floor(parseFloat(textoResultado.textContent));
+            textoResultado.textContent = resultadoRedondeadoAbajo;
+        }
+        function ceil() {
+            let resultadoRedondeadoArriba = Math.ceil(parseFloat(textoResultado.textContent));
+            textoResultado.textContent = resultadoRedondeadoArriba;
+        }
+    </script>
+</body>
+
 </html>
