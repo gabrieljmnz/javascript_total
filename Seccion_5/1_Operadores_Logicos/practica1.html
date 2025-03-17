@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Operadores Logicos 1</title>
+</head>
+
+<body>
+    <p>Ingrese número 1:</p>
+    <input type="number" id="numero1">
+    <p>Ingrese número 2:</p>
+    <input type="number" id="numero2">
+    <button onclick="calcular()">Enviar</button>
+    <p id="texto">---</p>
+
+    <script>
+        let elementoTexto = document.getElementById("texto");
+        let elementoN1 = document.getElementById("numero1");
+        let elementoN2 = document.getElementById("numero2");
+
+        function calcular() {
+            let real = elementoN1.value > elementoN2.value;
+            elementoTexto.textContent = real;
+            
+        }
+    </script>
+</body>
+
+</html>
