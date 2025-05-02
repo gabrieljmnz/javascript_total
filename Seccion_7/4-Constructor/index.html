@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+<body>
+    <script>
+        function perro() {
+            this.patas = 4;
+            this.ladrar = function () {
+                console.log("Guau");
+            };
+        };
+        
+        let reina = new perro();
+        let batu = new perro();
+    </script>
+   
+</body>
+</html>

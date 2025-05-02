@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica Constructor 1</title>
+</head>
+
+<body>
+    <script>
+        function automovil() {
+            this.marca = "";
+            this.modelo = "";
+            this.anio = "";
+            this.arrancar = function () {
+                console.log("En marcha");
+            };
+        };
+        
+        let Corvette = new automovil();
+        let Porsche = new automovil();
+    </script>
+</body>
+
+</html>
