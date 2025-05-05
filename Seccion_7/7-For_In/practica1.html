@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For In 1</title>
+</head>
+ 
+<body>
+    <script>
+        let Automovil = {
+            marca: 'Ford',
+            modelo: 'Fiesta',
+            anio: 2015,
+        };
+ 
+        function mostrarInfo() {
+            for (let caracteristica in Automovil) {
+                console.log(caracteristica + ":" + Automovil[caracteristica]);
+            }
+        }
+    </script>
+</body>
+ 
+</html>

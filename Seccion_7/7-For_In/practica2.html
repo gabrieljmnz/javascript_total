@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For In 2</title>
+</head>
+<body>
+    <script>
+        let Polo = {
+            marca: 'Ford',
+            color: 'Fiesta',
+            talle: 'M',
+        };
+ 
+        function mostrarInfo() {
+            for (let caracteristica in Polo) {
+                console.log(caracteristica + ":" + Polo[caracteristica]);
+            }
+        }
+    </script>
+</body>
+</html>

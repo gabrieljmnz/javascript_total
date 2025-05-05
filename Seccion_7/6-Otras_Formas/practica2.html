@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otras Formas 2</title>
+</head>
+
+<body>
+    <script>
+        let automovil111 = {
+            marca: 'Ford',
+            modelo: 'Fiesta',
+            año: 2015,
+            arrancar() { console.log('En marcha'); }
+        };
+
+        let automovil112 = Object.create(automovil111);
+        
+        automovil112.color = 'Rojo';
+
+        console.log(automovil112.marca);
+        console.log(automovil112.color);
+        automovil112.arrancar();
+    </script>
+</body>
+
+</html>

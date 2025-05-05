@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica Parametros Constructor 1</title>
+</head>
+<body>
+    <script>
+        function automovil(marca, modelo, anio) {
+            this.marca = marca;
+            this.modelo = modelo;
+            this.anio = anio;
+            this.arrancar = function () {
+                console.log("Brum Bruuum");
+            };
+        };
+
+        let Maserati = new automovil("Maserati", "Gran Turismo", 2021);
+        let Ford = new automovil("Ford", "Etzel", 1998);
+    </script>
+</body>
+</html>

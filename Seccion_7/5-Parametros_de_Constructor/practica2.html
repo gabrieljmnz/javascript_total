@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica Parametros Constructor 2></title>
+</head>
+<body>
+    <script>
+        function polo(marca, color, talle) {
+            this.marca = marca;
+            this.color = color;
+            this.talle = talle;
+            this.fabricar = function () {
+                console.log("Polo Fabricado");
+            };
+        };
+
+        let Nike = new polo("Nike", "Verde", "M");
+        let Stussy = new polo("Stussy", "Rosa", "XL");
+    </script>
+</body>
+</html>

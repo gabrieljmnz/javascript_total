@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otras Formas 1</title>
+</head>
+
+<body>
+    <script>
+        let automovil = new Object();
+
+        automovil.marca = 'Toyota';
+        automovil.modelo = 'Corolla';
+        automovil.anio = 2022;
+        automovil.color = 'Rojo';
+
+        automovil.encender = function () {
+            alert("Automóvil encendido");
+        };
+
+        automovil.detalles = function () {
+            alert(`Marca: ${this.marca}\nModelo: ${this.modelo}\nAño: ${this.anio}\nColor: ${this.color}`);
+        };
+    </script>
+</body>
+
+</html>
