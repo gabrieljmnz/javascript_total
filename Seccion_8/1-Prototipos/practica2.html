@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Prototipos en JavaScript</title>
+</head>
+<body>
+    <script>
+        let estudiante = {
+            nombre: "Angel",
+            apellido: "Vargas",
+            legajo: 12345
+        };
+
+        function prototipos() {
+            let estudiante1 = Object.create(estudiante);
+
+            console.log(Object.getPrototypeOf(estudiante1));
+        }
+
+        prototipos();
+    </script>
+</body>
+</html>

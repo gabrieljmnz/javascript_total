@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Prototipos 1</title>
+</head>
+<body>
+    <script>
+        let auto = {
+            marca: "Toyota",
+            modelo: "Corolla"
+        };
+
+        function prototipos() {
+            let auto1 = Object.create(auto);
+
+            console.log(Object.getPrototypeOf(auto1));
+        }
+
+        prototipos();
+    </script>
+</body>
+</html>
