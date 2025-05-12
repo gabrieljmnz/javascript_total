@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="misEstilos.css">
-    <script src="misScripts.js"></script>
     <title>Cotidiano Empleados</title>
 </head>
 
@@ -24,41 +23,8 @@
     <br><br>
     <button onclick="agregarEmpleado()">Cargar Empleado</button>
     <br><br>
-    <button onclick="mostrarEmpleado()">Mostrar Empleado</button>
-
-    <script>
-        let elementoExpediente = document.getElementById("txtExpediente")
-        let elementoNombre = document.getElementById("txtNombre")
-        let elementoApellido = document.getElementById("txtApellido")
-        let elementoFechaNacimiento = document.getElementById("txtNacimiento")
-        let elementoCargo = document.getElementById("txtCargo")
-
-        function Empleado(expediente, nombre, apellido, fechaNacimiento, cargo) {
-            this.expediente = expediente;
-            this.nombre = nombre;
-            this.apellido = apellido;
-            this.fechaNacimiento = fechaNacimiento;
-            this.cargo = cargo;
-        }
-
-        function agregarEmpleado() {
-            let expediente = elementoExpediente.value;
-            let nombre = elementoNombre.value;
-            let apellido = elementoApellido.value;
-            let fechaNacimiento = elementoFechaNacimiento.value;
-            let cargo = elementoCargo.value;
-
-            let nuevoEmpleado = new Empleado(expediente, nombre, apellido, fechaNacimiento, cargo);
-        }
-
-        function mostrarEmpleados() {
-
-        }
-
-        function limpiarCampos() {
-
-        }
-    </script>
+    <button onclick="mostrarEmpleados()">Mostrar Empleado</button>
+    <script src="misScripts.js"></script>
 </body>
 
 </html>
