@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+  <head>
+    <title>Modificar Prototipos 1</title>
+  </head>
+
+  <body>
+    <script>
+      function Videojuego(nombre, empresa, anioLanzamiento){
+        this.nombre = nombre; 
+        this.empresa = empresa;
+        this.anioLanzamiento = anioLanzamiento;
+      }
+
+      let videojuego1 = new Videojuego("Mario Bros", "Nintendo", 1983);
+
+      videojuego.prototype.play = function(){
+        console.log(this.nombre + " ha sido iniciado")
+      }
+
+      videojuego1.play()
+    </script>
+  </body>
+</html>

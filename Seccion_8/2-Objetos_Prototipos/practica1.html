@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Objetos Prototipos 1</title>
+</head>
+
+<body>
+    <script>
+        function Futbolista(nombre, equipo, posicion) {
+            this.nombre = nombre;
+            this.equipo = equipo;
+            this.posicion = posicion;
+        }
+
+        function prototipos() {
+            let futbolista1 = new Futbolista("Leonel Messi", "PSG", "Delantero");
+            console.log(futbolista1);
+        }
+        prototipos();
+    </script>
+</body>
+
+</html>

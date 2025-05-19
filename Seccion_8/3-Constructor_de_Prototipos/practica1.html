@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Constructor en Prototipos 1</title>
+</head>
+
+<body>
+    <script>
+        function Restaurante(nombre, direccion, ciudad) {
+            this.nombre = nombre;
+            this.direccion = direccion;
+            this.ciudad = ciudad;
+        }
+
+        let restaurante1 = new Restaurante("Pizza Hut", "Alajuela, San Rafael", "Alajuela");
+
+        let restaurante2 = Object.create(restaurante1);
+
+        function prototipos() {
+            console.log(restaurante2);
+            alert("Revisa la consola para ver la herencia de restaurante2");
+        }
+
+        prototipos();
+    </script>
+</body>
+
+</html>
