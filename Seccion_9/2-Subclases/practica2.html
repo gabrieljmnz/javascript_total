@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 2</title>
+</head>
+<body>
+    <script>
+        class Medico{
+            constructor(nombre, numeroLicencia){
+                this.nombre = nombre;
+                this.numeroLicencia = numeroLicencia;
+            }
+        }
+ 
+        class Cirujano extends Medico{
+            constructor(nombre, numeroLicencia, cantOperaciones){
+                super(nombre, numeroLicencia);
+                this.cantOperaciones = cantOperaciones;
+            }
+        }
+
+        let cirujano1 = new Cirujano("Kankan", "C193", 123);
+        console.log(cirujano1)
+    </script>
+</body>
+</html>

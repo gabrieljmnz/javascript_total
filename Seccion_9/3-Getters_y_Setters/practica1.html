@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1</title>
+</head>
+
+<body>
+    <script>
+        class Ciudad {
+            constructor(nombre, pais, cantHabitantes) {
+                this._nombre = nombre;
+                this._pais = pais;
+                this._cantHabitantes = cantHabitantes;
+            }
+
+            get nombre() {
+                return this._nombre;
+            }
+
+            set nombre(nuevoNombre) {
+                this._nombre = nuevoNombre;
+            }
+
+            get pais() {
+                return this._pais;
+            }
+
+            set pais(nuevoPais) {
+                this._pais = nuevoPais;
+            }
+
+            get cantHabitantes() {
+                return this._cantHabitantes;
+            }
+
+            set cantHabitantes(nuevaCantHabitantes) {
+                this._cantHabitantes = nuevaCantHabitantes;
+            }
+        }
+
+        const miCiudad = new Ciudad("San Rafael", "Costa Rica", 5000);
+    </script>
+</body>
+
+</html>
