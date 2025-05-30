@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+  <head>
+    <title>Fetch</title>
+  </head>
+  <body>
+
+    <div id="titulo"></div>
+    <div id="director"></div>
+    <div id="lanzamiento"></div>
+    <div id="duracion"></div>
+    <div id="actores"></div>
+    <div id="premioOscar"></div>
+
+    <hr/>
+
+    <script>
+        let datosJson;
+        fetch('pelicula.json')
+
+        .then(res => res.json())
+
+        .then((salida) => {
+          datosJson = salida; 
+
+          // Se obtiene el elemento del DOM con id "nombre"
+          let elementoTexto = document.getElementById('nombre');
+          let elementoTitulo = document.getElementById("titulo");
+          let elementoDirector = document.getElementById("director");
+          let elementoLanzamiento = document.getElementById("lanzamiento");
+          let elementoDuracion = document.getElementById("duracion");
+          let elementoActores = document.getElementById("actores");
+          let elementoPremioOscar = document.getElementById("premioOscar");
+
+          // Se modifica el contenido del elemento con el valor de la propiedad 'edad' del JSON
+          elementoTitulo.textContent = datosJson.titulo;
+          elementoDirector.textContent = datosJson.director;
+          elementoLanzamiento.textContent = datosJson.lanzamiento;
+          elementoDuracion.textContent = datosJson.duracion;
+          elementoActores.textContent = datosJson.actores;
+          elementoPremioOscar.textContent = datosJson.premioOscar;
+        })
+    </script>
+  </body>
+</html>

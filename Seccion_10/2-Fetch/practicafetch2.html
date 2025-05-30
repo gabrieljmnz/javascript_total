@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <head>
+    <title>Fetch</title>
+  </head>
+  <body>
+
+    <div id="nombre"></div>
+    <div id="direccion"></div>
+    <div id="cantEstudiantes"></div>
+    <div id="estudiantes"></div>
+
+    <hr/>
+
+    <script>
+        let datosJson;
+        fetch('colegio.json')
+
+        .then(res => res.json())
+
+        .then((salida) => {
+          datosJson = salida; 
+
+          // Se obtiene el elemento del DOM con id "nombre"
+         let elementoNombre = document.getElementById("nombre");
+         let elementoDirecion = document.getElementById("direccion");
+         let elementoCantEstudiantes = document.getElementById("cantEstudiantes");
+         let elementoEstudiantes = document.getElementById("estudiantes");
+
+          // Se modifica el contenido del elemento con el valor de la propiedad 'edad' del JSON
+          elementoNombre.textContent = datosJson.nombre;
+          elementoDireccion.textContent = datosJson.direccion;
+          elementoCantEstudiantes.textContent = datosJson.cantEstudiantes;
+          elementoEstudiantes.textContent = datosJson.estudiantes;
+        })
+    </script>
+  </body>
+</html>
