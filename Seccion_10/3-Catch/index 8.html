@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+  <head>
+    <title>JSON</title>
+  </head>
+  <body>
+
+    <!-- Este contenedor HTML mostrará el nombre obtenido desde el archivo JSON -->
+    <div id="nombre"></div>
+
+    <script>
+        // Declaramos una variable que almacenará los datos cargados desde el archivo persona.json
+        let datosJson;
+
+        /*
+          fetch() es una función integrada en JavaScript para hacer peticiones HTTP.
+          Aquí se usa para solicitar el archivo 'persona.json'.
+          fetch() devuelve una Promesa, lo que permite trabajar de forma asíncrona.
+        */
+        fetch('persona.json')
+
+        /*
+          .then() se ejecuta cuando la Promesa de fetch se resuelve correctamente.
+          El primer .then toma la respuesta (res) y llama a res.json() para convertirla
+          en un objeto JavaScript.
+        */
+        .then(res => res.json())
+
+        /*
+          El segundo .then recibe los datos ya convertidos a objeto y los almacena en
+          la variable datosJson. Luego modifica el contenido del div con id 'nombre'.
+        */
+        .then((salida) => {
+          datosJson = salida; // Almacenamos el objeto JSON completo
+
+          // Obtenemos el elemento HTML donde mostraremos el nombre
+          let elementoTexto = document.getElementById('nombre');
+
+          // Asignamos el valor de la propiedad 'nombre' del JSON al texto del div
+          elementoTexto.textContent = datosJson.nombre;
+        })
+
+        /*
+          .catch() se ejecuta si ocurre un error durante la solicitud.
+          Aquí mostramos una alerta con el mensaje de error.
+        */
+        .catch(function(error) {
+          alert(error); // Muestra el error si no se pudo cargar el archivo
+        });
+    </script>
+  </body>
+</html>

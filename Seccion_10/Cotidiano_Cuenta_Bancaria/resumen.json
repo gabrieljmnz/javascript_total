@@ -1,0 +1,12 @@
+{
+    "banco": "Banco de Costa Rica",
+    "sucursal": "San Rafael, Alajuela",
+    "titular": "Vargas Angel",
+    "numero_cuenta": "175246108",
+    "saldo": [
+        {"moneda": "USD", "monto": 700.56},
+        {"moneda": "EUR", "monto": 195.43}
+    ],
+    "numero_de_tarjeta": "1562244781396451",
+    "abierto": "01/05/2021"
+}

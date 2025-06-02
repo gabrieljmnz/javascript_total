@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch 1</title>
+</head>
+<body>
+    <script>
+        let titulo;
+        let director;
+        let lanzamiento;
+        let duracion;
+        let actores;
+        let premioOscar;
+
+        function ejecutar(){
+            fetch('datos.json')
+            .then(respuesta => respuesta.json())
+            .then(function(salida) {
+                titulo = salida.titulo;
+                director = salida.director;
+                lanzamiento = salida.lanzamiento;
+                duracion = salida.duracion;
+                actores = salida.actores;
+                premioOscar = salida.premioOscar;
+                console.log({ titulo, director, lanzamiento, duracion, actores, premioOscar });
+            })
+            .catch(function(error) {
+                alert(error);
+            });
+        }
+        
+    </script>
+</body>
+</html>
