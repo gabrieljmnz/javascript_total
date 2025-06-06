@@ -1,27 +1,24 @@
 function cargarResumen() {
-    let datosJson; 
+    let datosJson;
     fetch('resumen.json')
-    .then(res => res.json())
-    .then((salida) => {
-        datosJson = salida;
+        .then(res => res.json())
+        .then((salida) => {
+            datosJson = salida;
 
-        let elementoBanco = document.getElementById('bancoId');
-        let elementoSucursal = document.getElementById('sucursalId');
-        let elementoTitular = document.getElementById('titularId');
-        let elementoNumeroCuenta = document.getElementById('numeroCuentaId');
+            document.getElementById('bancoId').textContent = datosJson.banco;
+            document.getElementById('sucursalId').textContent = datosJson.sucursal;
+            document.getElementById('titularId').textContent = datosJson.titular;
+            document.getElementById('numeroCuentaId').textContent = datosJson.numero_cuenta;
 
-        let elementoNumTarjeta = document.getElementById('numTarjetaId');
-        let elementoAbierto = document.getElementById('abiertoId');
+            document.getElementById('usdSaldoId').textContent = datosJson.saldo[0].monto;
+            document.getElementById('eurSaldoId').textContent = datosJson.saldo[1].monto;
 
-        elementoBanco.textContent = datosJson.banco;
-        elementoSucursal.textContent = datosJson.sucursal;
-        elementoTitular.textContent = datosJson.titular;
-        elementoNumeroCuenta.textContent = datosJson.numero_cuenta;
-        elementoNumTarjeta.textContent = datosJson.numero_de_tarjeta;
-        elementoAbierto.textContent = datosJson.abierto;
-    })
-    .catch(function(error) {
-        alert("Error al cargar los datos: " + error);
-    });
+            document.getElementById('cbuId').textContent = datosJson.cbu;
+            document.getElementById('abiertoId').textContent = datosJson.abierto;
+        })
+        .catch(function (error) {
+            alert("Error al cargar los datos: " + error);
+            console.error("Error en la carga:", error);
+        });
 }
 

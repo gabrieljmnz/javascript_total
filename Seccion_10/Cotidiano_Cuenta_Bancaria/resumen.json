@@ -1,12 +1,12 @@
 {
-    "banco": "Banco de Costa Rica",
-    "sucursal": "San Rafael, Alajuela",
-    "titular": "Vargas Angel",
+    "banco": "Banco de Springfield",
+    "sucursal": "Springfield, IL",
+    "titular": "Torres Manuel",
     "numero_cuenta": "175246108",
     "saldo": [
-        {"moneda": "USD", "monto": 700.56},
-        {"moneda": "EUR", "monto": 195.43}
+        { "moneda": "USD", "monto": 725.09 },
+        { "moneda": "EUR", "monto": 195.67 }
     ],
-    "numero_de_tarjeta": "1562244781396451",
+    "cbu": "1562244781396451",
     "abierto": "01/05/2021"
 }

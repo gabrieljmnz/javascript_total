@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    margin: 20px;
+}
+
+h1, h2 {
+    color: #0073e6;
+}
+
+p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+img {
+    display: block;
+    margin: 10px auto;
+}
+
+.moneda img {
+    width: 50px;
+}
+
+.moneda p {
+    font-weight: bold;
+    font-size: 18px;
+}
+
