@@ -21,4 +21,3 @@ function cargarResumen() {
             console.error("Error en la carga:", error);
         });
 }
-
