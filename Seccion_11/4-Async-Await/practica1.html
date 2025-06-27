@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversión de dólares a colones</title>
+</head>
+<body>
+    <h2>Conversión de dólares a colones</h2>
+    <script>
+        async function request(url) {
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error("Error al hacer la petición:", error);
+                throw error;
+            }
+        }
+        async function convertirDolares() {
+            let montoDolares = 100;
+            console.log("Obteniendo tasa de conversión...");
+
+            try {
+                const datos = await request('https://open.er-api.com/v6/latest/USD');
+                const tasaCRC = datos.rates.CRC;
+
+                let colones = montoDolares * tasaCRC;
+                console.log(`${montoDolares} dólares son aproximadamente ${colones.toFixed(2)} colones`);
+            } catch (error) {
+                console.error("No se pudo convertir debido a un error:", error);
+            }
+        }
+        convertirDolares();
+    </script>
+</body>
+</html>
