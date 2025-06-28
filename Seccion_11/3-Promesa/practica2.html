@@ -7,22 +7,25 @@
 </head>
 <body>
     <script>
-        function obtenerUsuario() {
+        function getDatos(url) {
             return new Promise(function(resolve, reject) {
                 let xhr = new XMLHttpRequest();
-                chr.open('GET', 'https://jsonplaveholder.typicode.com/users');
+                xhr.open('GET', url);
                 xhr.onload = function() {
-                    if(xhr = status === 200) {
-                        resolver(JSON.parse(xhr.responseText9));
+                    if (xhr.status === 200) {
+                        resolve(JSON.parse(xhr.responseText));
                     } else {
                         reject(xhr.statusText);
                     }
-                }
+                };
+                xhr.onerror = function() {
+                    reject("Error de red");
+                };
                 xhr.send();
             });
         }
- 
-        obtenerUsuarios()
+
+        getDatos('https://jsonplaceholder.typicode.com/users')
         .then(function(usuarios) {
             console.log(usuarios);
         })
