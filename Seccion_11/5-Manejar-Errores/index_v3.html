@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Función Sincrónica con Try/Catch</title>
+</head>
+<body>
+<script>
+// Función sincrónica
+function sumarNumeros(a, b) {
+  if (typeof a !== 'number' || typeof b !== 'number') {
+    throw new Error('Alguno de los argumentos no es número');
+  }
+  return a + b;
+}
+ 
+async function manejarErrores() {
+  try {
+    const resultado = await sumarNumeros('2', 3);
+    console.log('Resultado:', resultado);
+  } catch (error) {
+    console.error('Error atrapado:', error.message);
+  }
+}
+ 
+manejarErrores();
+</script>
+</body>
+</html>
