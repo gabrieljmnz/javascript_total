@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD con JSON Server</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #2c2c2c;
+    }
+
+    a {
+      color: #555555;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #000000;
+    }
+
+    button {
+      background-color: #e0e0e0;
+      border: none;
+      padding: 10px 20px;
+      color: #333333;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #cccccc;
+    }
+
+    input,
+    textarea {
+      background-color: #ffffff;
+      border: 1px solid #cccccc;
+      padding: 10px;
+      color: #333333;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="titulo">
+    <h1>Gestion de dispositivos</h1>
+  </div>
+
+  <h2>Agregar dispositivo</h2>
+  <input type="text" id="nombre" placeholder="Nombre del dispositivo" />
+  <input type="number" id="precio" placeholder="Precio" />
+  <button onclick="agregarUno()">Agregar</button>
+
+  <h2>Consultar dispositivo por ID</h2>
+  <input type="number" id="consultaID" placeholder="ID a consultar" />
+  <button onclick="consultarUno()">Buscar</button>
+  <div id="resultadoConsulta"></div>
+
+  <h2>Lista de dispositivos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="productos"></tbody>
+  </table>
+  <script>
+    const API_URL = "https://5ad83b00-3132-46e8-822b-837dd55efbc1-00-3op52urfcaohk.worf.replit.dev/productos";
+
+    function obtenerTodos() {
+      fetch(API_URL)
+        .then((response) => response.json())
+        .then((data) => {
+          const tbody = document.getElementById("productos");
+          tbody.innerHTML = "";
+          data.forEach((p) => {
+            tbody.innerHTML += `
+              <tr>
+                <td>${p.id}</td>
+                <td><input value="${p.nombre}" id="nombre-${p.id}"></td>
+                <td><input value="${p.precio}" id="precio-${p.id}"></td>
+                <td>
+                  <button onclick="modificarUno(${p.id})">Modificar</button>
+                  <button onclick="eliminarUno(${p.id})">Eliminar</button>
+                </td>
+              </tr>
+            `;
+          });
+        });
+    }
+
+    function consultarUno() {
+      const id = document.getElementById("consultaID").value;
+      fetch(`${API_URL}/${id}`)
+        .then(res => res.json())
+        .then(p => {
+          document.getElementById("resultadoConsulta").innerHTML = `
+            <p><strong>ID:</strong> ${p.id}</p>
+            <p><strong>Nombre:</strong> ${p.nombre}</p>
+            <p><strong>Precio:</strong> ${p.precio}</p>`;
+        });
+    }
+
+    function agregarUno() {
+      const nombre = document.getElementById("nombre").value;
+      const precio = document.getElementById("precio").value;
+      fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre, precio }),
+      }).then(() => {
+        document.getElementById("nombre").value = "";
+        document.getElementById("precio").value = "";
+        obtenerTodos();
+      });
+    }
+
+    function modificarUno(id) {
+      const nombre = document.getElementById(`nombre-${id}`).value;
+      const precio = parseFloat(document.getElementById(`precio-${id}`).value);
+      fetch(`${API_URL}/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ nombre, precio }),
+      }).then(obtenerTodos);
+    }
+
+    function eliminarUno(id) {
+      fetch(`${API_URL}/${id}`, {
+        method: "DELETE"
+      }).then(obtenerTodos);
+    }
+
+    window.onload = obtenerTodos;
+  </script>
+</body>
+</html>
