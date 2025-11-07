@@ -1,0 +1,95 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f6fa;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #d43d3d; 
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px #00000050;
+}
+
+#area-juego {
+    margin: 30px auto;
+    max-width: 900px;
+    background-color: #fff8dc;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+thead th {
+    background-color: #9147ff;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+td, th {
+    border: 1px solid #ccc;
+    padding: 8px;
+    vertical-align: middle;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f0e6ff;
+}
+
+td.ultimo-atacado {
+    background-color: #ffb3b3;
+    color: #800000;
+    font-weight: bold;
+}
+
+button {
+    background-color: #d43d3d;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 10px 5px 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #b82c2c;
+}
+
+button:disabled {
+    background-color: #e0a0a0;
+    cursor: not-allowed;
+}
+
+#mensaje, #mensaje-ataque {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+@media (max-width: 600px) {
+    #area-juego {
+        padding: 10px;
+    }
+    table {
+        font-size: 14px;
+    }
+    button {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+}

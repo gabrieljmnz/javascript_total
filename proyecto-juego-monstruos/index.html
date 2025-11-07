@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Batalla Pokémon</title>
+    <link rel="stylesheet" href="css/estilo.css" />
+</head>
+<body>
+    <h1>Batalla Pokémon</h1>
+    <img src="foto-inicio/pokemonxd.jpg" width="40%" alt="Charizard vs Mewtwo" />
+    <div id="area-juego"></div>
+
+    <button id="nuevo-juego">Nuevo Juego</button>
+    <button id="siguiente-turno" disabled>Siguiente Turno</button>
+    <!-- botones añadidos para exportar e importar XML -->
+    <button id="exportar-xml">Exportar estado XML</button>
+    <button id="importar-xml">Importar estado XML</button>
+    <input type="file" id="input-importar-xml" accept=".xml" style="display:none" />
+
+    <script src="js/juego.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
